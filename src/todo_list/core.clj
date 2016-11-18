@@ -4,9 +4,13 @@
 
 (defn welcome
   [request]
-  {:status 200
-   :body "<p>Hello mothafucka</p>"
-   :headers {}})
+  (if (= "/" (:uri request))
+    {:status 200
+     :body "<p>Hello mothafucka</p>"
+     :headers {}}
+    {:status 404
+     :body "<p>OOOOOOOOOOOOOOOOOOps</p>"
+     :headers {}}))
 
 (defn -main
   "Simple web server using Ring & Jetty"
