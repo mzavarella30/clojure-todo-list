@@ -4,55 +4,7 @@
             [compojure.core :refer [defroutes GET]]
             [compojure.route :refer [not-found]]
             [ring.handler.dump :refer [handle-dump]]
-            [hiccup.core :refer :all]
-            [hiccup.page :refer :all]))
-
-(def operands {"+" +
-               "-" -
-               ":" /
-               "*" *})
-
-(defn calc
-  [request]
-  (let [rps (:route-params request)
-        op (operands (rps :op))
-        a (Integer. (rps :a))
-        b (Integer. (rps :b))
-        ans (op a b)]
-    {:status 200
-     :body (str ans)
-     :headers {}}))
-
-(defn hello
-  [request]
-  (let [name (get-in request [:route-params :nombre])]
-    {:status 200
-     :body (str "Hello, " name "!")
-     :headers {}}))
-
-(defn about
-  [request]
-  {:status 200
-   :body "About me!"
-   :headers {}})
-
-(defn goodbye
-  [request]
-  (html5 {:lang "en"}
-         [:head (include-js "app.js") (include-css "style.css")]
-         [:body
-          [:div
-           [:h1 {:class "info"} "Walking back to happiness..."]]
-          [:div
-           [:p "Walking back to happiness with you!"]]
-          [:div
-           [:p "Said, Farwell to loneliness I knew..."]]]))
-
-(defn welcome
-  [request]
-  {:status 200
-   :body "<p>Hello world</p>"
-   :headers {}})
+            [todo-list.handlers :refer :all]))
 
 (defroutes app
   (GET "/" [] welcome)
