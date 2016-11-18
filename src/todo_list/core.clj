@@ -1,6 +1,8 @@
 (ns todo-list.core
   (:require [ring.adapter.jetty :as jetty]
-            [ring.middleware.reload :refer [wrap-reload]]))
+            [ring.middleware.reload :refer [wrap-reload]]
+            [compjure.core :refer [defroutes GET]]
+            [compjure.route :refer [not-found]]]))
 
 
 (defn welcome
