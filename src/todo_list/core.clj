@@ -10,7 +10,15 @@
   (GET "/goodbye" [] goodbye)
   (GET "/about" [] about)
   (GET "/request-info" [] handle-dump)
+  (GET "/hello/:nombre" [] hello)
   (not-found "Oops..."))
+
+(defn hello
+  [request]
+  (let [name (get-in request [:route-params :nombre])]
+    {:status 200
+     :body (str "Hello, " name "!")
+     :headers {}}))
 
 (defn about
   [request]
