@@ -4,6 +4,7 @@
   :license {:name "MIT License"
             :url "https://opensource.org/license/MIT"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [ring "1.5.0"]]
+                 [ring "1.5.0"]
+                 [compojure "1.5.1"]]
   :main todo-list.core
   :profiles {:dev {:main todo-list.core/-dev-main}})
