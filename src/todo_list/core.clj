@@ -11,9 +11,6 @@
 (defn -main
   "Simple web server using Ring & Jetty"
   [port-number]
-  (jetty/run-jetty
-   (fn [request] {:status 200
-                  :body "<p>Hello World!!!</p>"
-                  :headers {}})
+  (jetty/run-jetty welcome
    {:port (Integer. port-number)}))
 
