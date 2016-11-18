@@ -6,8 +6,12 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [ring "1.5.0"]
                  [compojure "1.5.1"]
-                 [hiccup "1.0.5"]]
+                 [hiccup "1.0.5"]
+                 [org.clojure/java.jdbc "0.7.0-alpha1"]
+                 [postgresql/postgresql "9.1-901-1.jdbc4"]]
   :main todo-list.core
-  :profiles {:dev {:main todo-list.core/-dev-main}}
+  :auto-clean false
+  :profiles {:dev {:main todo-list.core/-dev-main}
+             :uberjar {:aot :all}}
   :min-lein-version "2.0.0"
   :uberjar-name "todo-list.jar")
