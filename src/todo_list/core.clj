@@ -38,9 +38,15 @@
 
 (defn goodbye
   [request]
-  {:status 200
-   :body "Goodbye"
-   :headers {}})
+  (html5 {:lang "en"}
+         [:head (include-js "app.js") (include-css "style.css")]
+         [:body
+          [:div
+           [:h1 {:class "info"} "Walking back to happiness..."]]
+          [:div
+           [:p "Walking back to happiness with you!"]]
+          [:div
+           [:p "Said, Farwell to loneliness I knew..."]]]))
 
 (defn welcome
   [request]
