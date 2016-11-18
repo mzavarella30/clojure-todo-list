@@ -11,7 +11,24 @@
   (GET "/about" [] about)
   (GET "/request-info" [] handle-dump)
   (GET "/hello/:nombre" [] hello)
+  (GET "/calc/:op/:a/:b" [] calc)
   (not-found "Oops..."))
+
+(def operands {"+" +
+               "-" -
+               ":" /
+               "*" *})
+
+(defn calc
+  [request]
+  (let [rps (:route-params request)
+        op (operands (rps :op))
+        a (Integer. (rps :a))
+        b (Integer. (rps :b))
+        ans (op a b)]
+    {:status 200
+     :body (str ans)
+     :headers {}}))
 
 (defn hello
   [request]
