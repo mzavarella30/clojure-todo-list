@@ -7,6 +7,7 @@
   "Handler to respond with a simple welcome page"
   [request]
   (html5 {:lang "en"}
-         [:head (include-css "/resources/css/style.css")]
+         [:head (include-css "style.css")]
    [:h1 {:class "info"} "Hello, Clojure World!"]
-   [:p "Welcome to my first real Clojure thing."]))
+   [:p "I made you a todo list!"]
+   [:a {:href "/todo" :class "button"} "Check out your todo list"]))
