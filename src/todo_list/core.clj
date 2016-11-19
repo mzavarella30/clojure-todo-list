@@ -8,6 +8,7 @@
 
 (defroutes app
   (GET "/" [] welcome)
+  (GET "/todo" [] todo)
   (resources "/")
   (not-found "Oops..."))
 
