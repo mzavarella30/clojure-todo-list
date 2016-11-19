@@ -2,17 +2,13 @@
   (:require [ring.adapter.jetty :as jetty]
             [ring.middleware.reload :refer [wrap-reload]]
             [compojure.core :refer [defroutes GET]]
-            [compojure.route :refer [not-found]]
+            [compojure.route :refer [not-found resources]]
             [ring.handler.dump :refer [handle-dump]]
             [todo-list.handlers :refer :all]))
 
 (defroutes app
   (GET "/" [] welcome)
-  ;(GET "/goodbye" [] goodbye)
-  ;(GET "/about" [] about)
-  ;(GET "/request-info" [] handle-dump)
-  ;(GET "/hello/:nombre" [] hello)
-  ;(GET "/calc/:op/:a/:b" [] calc)
+  (resources "/")
   (not-found "Oops..."))
 
 (defn -dev-main
