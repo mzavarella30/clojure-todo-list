@@ -8,11 +8,11 @@
 
 (defroutes app
   (GET "/" [] welcome)
-  (GET "/goodbye" [] goodbye)
-  (GET "/about" [] about)
-  (GET "/request-info" [] handle-dump)
-  (GET "/hello/:nombre" [] hello)
-  (GET "/calc/:op/:a/:b" [] calc)
+  ;(GET "/goodbye" [] goodbye)
+  ;(GET "/about" [] about)
+  ;(GET "/request-info" [] handle-dump)
+  ;(GET "/hello/:nombre" [] hello)
+  ;(GET "/calc/:op/:a/:b" [] calc)
   (not-found "Oops..."))
 
 (defn -dev-main

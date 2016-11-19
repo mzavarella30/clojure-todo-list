@@ -10,6 +10,11 @@
    [:h1 "Hello, Clojure World!"]
    [:p "Welcome to my first real Clojure thing."]))
 
+
+
+
+;; These are old handlers for learning!
+
 (defn goodbye
   "A song to wish you goodbye"
   [request]
