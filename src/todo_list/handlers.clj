@@ -23,5 +23,5 @@
   "Handler to respond with the todo list"
   [request]
   (html5 {:lang "en"}
-         [:head]
+         (header)
          [:body]))
