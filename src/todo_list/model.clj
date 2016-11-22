@@ -18,6 +18,10 @@
   [id todo completed]
   {:id id, :name todo, :completed completed})
 
+(defn todo
+  [{:keys [id name]}]
+  [id name])
+
 (defn get-todo
   "Selects a specific todo from the db"
   [id]
@@ -31,6 +35,11 @@
 (defn get-all
   "Selects all of the todos from the db." []
   (j/query db ["select * from tasks"]))
+
+(defn get-all-as-todo
+  "Get's all of the todos and converts them into todo arrays"
+  []
+  (map todo (get-all)))
 
 (defn patch-todo
   "Updates a todo in the db"
@@ -48,3 +57,4 @@
   "select all tasks from db"
   [conn & opts]
   (j/query conn ["select * from tasks"]))
+
