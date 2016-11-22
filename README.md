@@ -1,14 +1,6 @@
 # todo-list
 
-A Clojure library designed to ... well, that part is up to you.
+A todo-list backend. I wanted to get back into using Clojure so I made this.
+localhost:XXXX/todo will display all of the todos.
 
-## Usage
-
-FIXME
-
-## License
-
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+It doesn't do much and ins't very interesting but it did it's job.
